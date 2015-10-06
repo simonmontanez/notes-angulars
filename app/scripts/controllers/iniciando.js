@@ -19,9 +19,13 @@ angular.module("iniciandoAngularApp").controller('InciandoCtrl',  function ($sco
 
 
   $scope.agregarCandidato = function(){
-    $scope.candidatos.push($scope.candidato);
-    console.log("candidatos", $scope.candidatos);
-    $scope.candidato = {};
+    if($scope.formAgregar.$valid){
+      $scope.candidatos.push($scope.candidato);
+      console.log("candidatos", $scope.candidatos);
+      $scope.candidato = {};
+
+    }
+
   }
 
 

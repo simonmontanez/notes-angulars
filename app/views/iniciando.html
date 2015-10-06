@@ -3,22 +3,25 @@
 
 <br/>
 
-<form ng-submit="agregarCandidato()">
+<form ng-submit="agregarCandidato()" novalidate name="formAgregar">
   <h2>Registro de candidatos</h2>
 
-  <div class="form-group">
-    <label for="nombre">Nombre</label>
-    <input type="text" class="form-control" id="nombre" placeholder="Nombre" ng-model="candidato.nombre">
+  <div class="form-group" ng-class="{'has-error':(!form.nombre.$valid && (formAgregar.nombre.$touched || formAgregar.$submitted))}">
+    <label for="nombre" class="control-label">Nombre</label>
+    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required ng-model="candidato.nombre">
+    <div>
+      <span class="help-block"  ng-show="formAgregar.nombre.$error.required && (formAgregar.nombre.$touched || formAgregar.$submitted)">Nombre requerido</span>
+    </div>
   </div>
 
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" class="form-control" id="email" placeholder="Email" ng-model="candidato.email">
+    <input type="email" class="form-control" id="email" placeholder="Email" required ng-model="candidato.email">
   </div>
 
   <div class="form-group">
     <label for="partido">Partido</label>
-    <select class="form-control" id="partido" ng-options="partido as partido.nombre for partido in partidos" ng-model="candidato.partido">
+    <select class="form-control" id="partido" ng-options="partido as partido.nombre for partido in partidos" required ng-model="candidato.partido">
       <option></option>
     </select>
 
@@ -26,7 +29,7 @@
 
   <div class="form-group">
     <label for="propuestas">Propuestas</label>
-    <textarea id="propuestas" class="form-control"  ng-model="candidato.propuestas"></textarea>
+    <textarea id="propuestas" class="form-control"  required ng-model="candidato.propuestas"></textarea>
   </div>
 
   <button type="submit" class="btn btn-default">Agregar</button>
