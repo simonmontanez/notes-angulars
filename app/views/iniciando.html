@@ -3,7 +3,7 @@
 
 <br/>
 
-<form>
+<form ng-submit="agregarCandidato()">
   <h2>Registro de candidatos</h2>
 
   <div class="form-group">
@@ -26,30 +26,23 @@
     <textarea id="propuestas" class="form-control"  ng-model="candidato.propuestas"></textarea>
   </div>
 
-
-
   <button type="submit" class="btn btn-default">Agregar</button>
 </form>
 
-<h2>Data<h2>
-  <div>
-    <div class="form-group">
-      <label for="nombre">Nombre</label>
-        <span> {{candidato.nombre}}</span>
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email</label>
-        <span> {{candidato.email}}</span>
-      </div>
-
-      <div class="form-group">
-        <label for="partido">Partido</label>
-        <span> {{candidato.partido}}</span>
-      </div>
-
-      <div class="form-group">
-        <label for="propuestas">Propuestas</label>
-        <span> {{candidato.propuestas}}</span>
-      </div>
-  </div>
+<h3> Resultados </h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Partido</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="can in candidatos">
+      <td>{{can.nombre}}</td>
+      <td>{{can.email}}</td>
+      <td>{{can.partido}}</td>
+    </tr>
+  </tbody>
+</table>
