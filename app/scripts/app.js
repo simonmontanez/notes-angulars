@@ -29,6 +29,11 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/iniciando', {
+        templateUrl: 'views/iniciando.html',
+        controller: 'InciandoCtrl',
+        controllerAs: 'iniciando'
+      })
       .otherwise({
         redirectTo: '/'
       });
