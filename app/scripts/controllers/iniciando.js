@@ -24,6 +24,10 @@ angular.module("iniciandoAngularApp").controller('InciandoCtrl',  function ($sco
       console.log("candidatos", $scope.candidatos);
       $scope.candidato = {};
 
+      $scope.formAgregar.$setPristine();
+      $scope.formAgregar.$setUntouched();
+
+
     }
 
   }

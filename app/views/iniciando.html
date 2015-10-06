@@ -6,7 +6,7 @@
 <form ng-submit="agregarCandidato()" novalidate name="formAgregar">
   <h2>Registro de candidatos</h2>
 
-  <div class="form-group" ng-class="{'has-error':(!form.nombre.$valid && (formAgregar.nombre.$touched || formAgregar.$submitted))}">
+  <div class="form-group" ng-class="{'has-error':(!formAgregar.nombre.$valid && (formAgregar.nombre.$touched || formAgregar.$submitted))}">
     <label for="nombre" class="control-label">Nombre</label>
     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required ng-model="candidato.nombre">
     <div>
