@@ -3,7 +3,8 @@
 <div class="row">
 
 
-    <form ng-submit="agregarCandidato()" novalidate name="formAgregar">
+    <form novalidate name="formAgregar">
+
         <div class="form-group">
             <label for="valorcompra">Valor de la compra</label>
             <input id="valorcompra" ng-model="valorcompra" type="text">
@@ -12,5 +13,13 @@
             <label for="total">Total</label>
             <compra valor-compra="valorcompra" id="total"></compra>
         </div>
+
+
+      <departamentomunicipio ng-model="municipio" ></departamentomunicipio>
+
+        {{municipio}}
+
     </form>
+
+
 </div>

@@ -1,0 +1,13 @@
+<div class="form-group" >
+    <label for="idDepartamento">Departamento</label>
+    <select id="idDepartamento"  name="idDepartamento" ng-model="idDepartamento" ng-options="departamento.id as departamento.nombre for departamento in departamentos" ng-change="filtrarMunicipios()" class="form-control" ng-required="{{requiredSwitch}}" ng-disabled="{{onlyread}}">
+        <option value="">Seleccione Departamento</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="entidad">Municipio</label>
+    <select id="entidad" name="idMunicipio" ng-model="idMunicipio" ng-options="municipio.id as municipio.nombre for municipio in municipiosFiltrado" class="form-control" ng-required="{{requiredSwitch}}" ng-disabled="onlyread">
+        <option value="">Seleccione Municipio</option>
+    </select>
+
+</div>
