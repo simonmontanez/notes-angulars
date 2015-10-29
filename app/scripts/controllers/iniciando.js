@@ -5,6 +5,8 @@ angular.module("iniciandoAngularApp").controller('InciandoCtrl',  function ($sco
   $scope.partidos = [];
   obtenerPartidos();
 
+  //$scope.titulo = 'El titulo desde la directiva'
+
   function obtenerPartidos() {
     partidosServices.listaPartidos().then(function success(response){
          $scope.partidos = response.data;
