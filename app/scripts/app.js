@@ -34,6 +34,11 @@ angular
         controller: 'InciandoCtrl',
         controllerAs: 'iniciando'
       })
+      .when('/directivas', {
+          templateUrl: 'views/directivas.html',
+          controller: 'DirectivasCtrl',
+          controllerAs: 'directivas'
+      })
       .otherwise({
         redirectTo: '/'
       });
